@@ -5,11 +5,8 @@
 %-----------------------------------------%
 
 %% Paths to get_spec_mat_iota_torsion and other SPEC analysis routines (change path according to output folder)
-addpath(genpath('/Users/salomonguinchard/Desktop/Master/TPV/Matlab routines/OutputScan'))
-addpath(genpath('/Volumes/elements/SPEC'))
-addpath(genpath('/Volumes/Suisse/OutputBOZ'))
-addpath(genpath('/Users/salomonguinchard/Desktop/Master/Labo/TPV/Matlab routines/Outputs_triang'))
-addpath(genpath('/Users/salomonguinchard/Documents/GitHub/Utilities/'))
+addpath(genpath('/path_to_OutputSPEC'))
+addpath(genpath('/path_to_/OutputBOZ'))
 fs=18; lw=1.5; % Fontsize, linewidth
 
 
@@ -19,7 +16,7 @@ f = strings(nscan,nscan);
 nn = length(f(:,1));
 parfor i=1:nn
     for j=1:nn
-        f(i,j) = ['Triang_scan_shear_', num2str(i), '_', num2str(j) '.sp.h5'];
+        f(i,j) = ['File', num2str(i), '_', num2str(j) '.sp.h5'];
     end 
 end
 filenames = reshape(f,1,nn^2);
@@ -290,8 +287,8 @@ ylabel('$R_{10}$', 'interpreter', 'latex')
 
 %% PLOT PROFIL IOTA ACROSS ZERO LEVEL CURVE %%
 
-filename_1 = ['Input_scan', num2str(index_R10_1), '_' num2str(index_R11) '.sp.h5'];
-filename_2 = ['Input_scan', num2str(index_R10_2), '_' num2str(index_R11) '.sp.h5'];
+filename_1 = ['File1', num2str(index_R10_1), '_' num2str(index_R11) '.sp.h5'];
+filename_2 = ['File2', num2str(index_R10_2), '_' num2str(index_R11) '.sp.h5'];
 
 shift = 8;
 
@@ -367,7 +364,6 @@ function out = extract_shear(d, n, shift, n_surf)
     out.derivatives(j) = (out.mat_iota(j+1) - out.mat_iota(j-1)) / (out.mat_s_coord(j+1) - out.mat_s_coord(j-1));
  end
  
-% out.coeff      =   - out.mat_s_coord ./ (out.mat_iota) ;
  out.coeff      =    out.mat_s_coord ./ (out.mat_iota) ;
  out.shear      =    (out.coeff)'     .* out.derivatives;
  out.avg_shear  =    mean(out.shear);                     % Avg shear 
