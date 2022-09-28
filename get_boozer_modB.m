@@ -2,7 +2,7 @@
 % =============================================
 % 
 % Generates an output data struct for the fourier 
-% coefficients Bmn of mod(B)
+% coefficients Bmn of mod(B) in Boozer coordinates
 % 
 % INPUT
 % -----

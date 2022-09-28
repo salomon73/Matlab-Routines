@@ -1,11 +1,11 @@
 %% get_metric_QA(BDATA)
 % ======================
 %
-% Extract the QA metric of a Booz_xForms output
+% Extract the QA metric from a Booz_xForms output
 %
 % INPUT
 % -----
-%   -bdata: must be produced using read_boozer
+%   -bdata: must be produced calling read_boozer
 %   
 % OUTPUT
 % ------

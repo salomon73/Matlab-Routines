@@ -2,6 +2,7 @@
 % =============================================
 % 
 % Computes the Boozer coordinates from a .boz.h5 file
+% .boz.h5 file must be generated using run_boz.py (see corresponding repo)
 % 
 % INPUT
 % -----
