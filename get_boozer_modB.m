@@ -23,7 +23,7 @@ function modB = get_boozer_modB(b, Ntheta, Nphi)
     
     theta = linspace(0, 2*pi, Ntheta);
     %phi   = linspace(0, 2*pi/double(Nfp), Nphi); % (for 2D plot of modB boozer)
-    phi   = linspace(0, 2*pi, Nphi);            % (for 3D plot of modB boozer)
+    phi   = linspace(0, 2*pi, Nphi);             % (for 3D plot of modB boozer)
     
     [modB.Phi, modB.Theta] = meshgrid(phi, theta);
    

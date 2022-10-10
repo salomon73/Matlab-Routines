@@ -29,10 +29,9 @@ shift = 5;
 
 disp 'Done initialising...'
 %% DISCRETISATION OF SPACE %%
-scan__11 = linspace(-0.7,0.7,nscan);
-scan__10 = linspace(-3,3,nscan);
-% scan__11 = linspace(-0.7,0.7,nscan);
-% scan__10 = linspace(-3,3,nscan);
+scan__11 = linspace(-0.7,0.7,nscan); % values between which the mode 11 will be scanned
+scan__10 = linspace(-3,3,nscan);     % same for 10
+
 %% RUN %%
 tic % set timer on
 parfor ii=1:ll
@@ -113,7 +112,7 @@ parfor ii=1:ll
     derivatives       = out.derivatives;
     avg_shear(ii)     = out.avg_shear;
     catch 
-    warning('Problem reading hdf5 file.  Assigning a value of -1');
+    warning('Problem extracting shear.  Assigning a value of -1 to d and all parameters to NaN');
     d = -1;
     n =  1;
     mat_iota          = NaN(1,n);

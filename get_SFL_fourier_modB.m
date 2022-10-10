@@ -19,7 +19,7 @@ function data_Bmn = get_SFL_fourier_modB(d, Ntheta, Nphi)
     Nfp  = d.input.physics.Nfp;
     Ntor = d.input.physics.Ntor;
     Mpol = d.input.physics.Mpol;
-        K = 2*pi^2/double(Nfp);
+       K = 2*pi^2/double(Nfp);
 
     lambdamn = squeeze(d.output.lambdamn);
     lambdamn = lambdamn(1:end,2);
@@ -27,7 +27,7 @@ function data_Bmn = get_SFL_fourier_modB(d, Ntheta, Nphi)
     nprime   = d.output.ins/double(Nfp);
 
     data_Bmn.Theta = linspace(0, 2*pi, Ntheta);
-    %data_Bmn.Phi   = linspace(0, 2*pi/double(Nfp), Nphi);
+    %data_Bmn.Phi   = linspace(0, 2*pi/double(Nfp), Nphi); %change accordingly 
     data_Bmn.Phi   = linspace(0, 2*pi, Nphi);
 
 

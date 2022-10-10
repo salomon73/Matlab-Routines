@@ -21,9 +21,9 @@ function plot_SFL_modB_boundary(data,interface,innout,nt,nz,dimension)
 % ------------------------------------%
 % Written by S.Guinchard (05/30/22)   %
 % ------------------------------------%
-
+%
 % TODO: adapt for more than 1 volume 
-% when booz_xform has been adapted
+%       when booz_xform has been adapted
 innout =0;
 interface = 1;
 Mvol = data.output.Mvol;
@@ -34,13 +34,13 @@ end
 
 switch innout
     case 0        
-        vol = interface;
+        vol  = interface;
         sarr = 1;
     case 1
         if interface==Mvol
             error('Cannot plot on the outer side of last interface!')
         end
-        vol = interface+1;
+        vol  = interface+1;
         sarr = -1;
     otherwise
         error('Interface should be 0 or 1')
@@ -80,7 +80,6 @@ switch dimension
         % Construct cartesian corrdinates 
 
         X = zeros(nt,nz);
-
         Y = zeros(nt,nz);
 
         for it=1:nt
@@ -94,9 +93,7 @@ switch dimension
         % Plot
 
         figure
-
         h=surf(X,Y,Z,squeeze(modB.modB));
-
         axis equal
         shading interp
         colorbar

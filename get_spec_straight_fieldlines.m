@@ -1,7 +1,7 @@
 %% GET_SPEC_STRAIGHT_FIELDLINES( d, NPOINTS, Nperiods )
 % =======================================================
 %
-% Gives as output the straightfieldlines coordinates from SPEC output
+% Gives as output the straightfieldlines coordinates from SPEC out file
 % 
 % INPUT
 % -----
@@ -21,7 +21,6 @@ function SFL_coord = get_spec_straight_fieldlines(d,Npoints,Nperiods)
       coord = plot_spec_fieldlines(d,Npoints,Nperiods,0);
       theta = coord.theta;
       phi   = coord.phi;
-      Fs    = 18;
       
       theta_sfl = theta;
 

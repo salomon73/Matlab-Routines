@@ -8,7 +8,8 @@
 % -----
 %   -data :   must be produced using read_spec
 %   -n :      length(iota) - (n_surf+shift-1);
-%   -shift :  shift of the indices we take into account when computing shear
+%   -shift :  shift of the indices we take into account when computing
+%             shear (1st indices might not be relevant (too close to axis))
 %   -n_surf : index of the first surface that encircles the magnetic axis
 %
 % ------------------------------------%
@@ -32,7 +33,6 @@ function out = extract_shear(d, n, shift, n_surf)
     out.derivatives(j) = (out.mat_iota(j+1) - out.mat_iota(j-1)) / (out.mat_s_coord(j+1) - out.mat_s_coord(j-1));
  end
  
-% out.coeff      =   - out.mat_s_coord ./ (out.mat_iota) ;
  out.coeff      =    out.mat_s_coord ./ (out.mat_iota) ;
  out.shear      =    (out.coeff)'     .* out.derivatives;
  out.avg_shear  =    mean(out.shear);                     % Avg shear 

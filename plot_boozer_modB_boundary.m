@@ -22,10 +22,11 @@ function plot_boozer_modB_boundary(b,data,interface,innout,nt,nz,dimension, newf
 % ------------------------------------%
 % Written by S.Guinchard (05/30/22)   %
 % ------------------------------------%
-
+%
 % TODO: adapt for more than 1 volume 
 % when booz_xform has been adapted
-innout = 0;
+
+innout    = 0; % will be changed when adapted
 interface = 1;
 Mvol = (b.Booz_xForms.Inputs.ns_in+1)/2;
 
@@ -94,7 +95,7 @@ switch dimension
         Z = squeeze(rzdata{2});
 
 
-        % Construct cartesian corrdinates 
+        % Construct cartesian coordinates 
 
         X = zeros(nt,nz);
 

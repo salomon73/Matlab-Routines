@@ -17,12 +17,14 @@
 % ------------------------------------%
 % Written by S.Guinchard (03/29/22)   %
 % ------------------------------------%
+
 function coordb = get_boozer_coordinates(b,d, Npoints, Nperiods)
 
 m   = b.Booz_xForms.Outputs.xm_b;
 n   = b.Booz_xForms.Outputs.xn_b; 
+
 coord = get_spec_straight_fieldlines(d,Npoints,Nperiods);
-iota = b.Booz_xForms.Inputs.iota;
+iota  = b.Booz_xForms.Inputs.iota;
 phi   = coord.phi;
 theta = coord.theta_sfl;
 numns = b.Booz_xForms.Outputs.numns_b;
@@ -35,7 +37,7 @@ for i = 1:Npoints
     end
 end
 
-coordb.phib = wrapTo2Pi(phi);
+coordb.phib   = wrapTo2Pi(phi);
 coordb.thetab = wrapTo2Pi(theta_b);
 
 end

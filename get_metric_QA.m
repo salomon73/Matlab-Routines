@@ -21,7 +21,7 @@ function metric = get_metric_QA(b)
     bmnc_b = b.Booz_xForms.Outputs.bmnc_b;
     xn_b   = b.Booz_xForms.Outputs.xn_b;
     ind    = find(xn_b ~= 0);
-    metric = sum(bmnc_b(ind).^2)/(bmnc_b(1)^2); % Not divide enables convergence
+    metric = sum(bmnc_b(ind).^2)/(bmnc_b(1)^2); % Not divide enables convergence of metric w.r.t mpol
     %metric = sum(bmnc_b(ind).^2)/(length(ind)*bmnc_b(1)^2);
 
 end

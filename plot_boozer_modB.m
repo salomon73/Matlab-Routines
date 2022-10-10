@@ -41,7 +41,6 @@ function plot_boozer_modB(b, Ntheta, Nphi, filled, Newfig)
             pcolor(Phi, Theta, modB);
             shading interp
             colorbar
-            %colormap(jet)
             hold on 
             contour(Phi, Theta, modB, 6, 'k', 'linewidth', 1)
 
